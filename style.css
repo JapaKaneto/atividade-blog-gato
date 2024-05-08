@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    font-size: 62.5%;
+  
+    --color-base-white: #fff;
+    --color-base-white-20: hsla(0, 0%, 100%, 0.2);
+    --color-base-gray900: #121214;
+    --color-base-gray800: #202024;
+    --color-base-blue100: #F4FCFF;
+    --color-base-blue600: #387E96;
+    --color-base-blue800:  #065E7C;
+  }
+  
+  html,
+  body,
+  input {
+    font-family: "Mulish", sans-serif;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    background-color: var(--color-base-blue100); 
+    justify-content: center;
+  }
+  
+  #app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+  
+  
+  }
+  
+  .container {
+    padding: 1.2rem 2.8rem;
+    margin: 0 auto;
+  }
+  
+  
+  header {
+    background-color: var(--color-base-blue800);
+    width: 100%;
+    display: flex;
+    gap: 2.6rem;
+    justify-content: center;
+  }
+  
+  
+  .header-wrapper{
+    width: 100%;
+    max-width: 117.6rem;
+    display: flex;
+    gap: 2.6rem;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+  
+  }
+  
+  header form {
+    flex: 1;
+    background-color: var(--color-base-white-20);
+    border-radius: .4rem;
+  }
+  
+  
+  .input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  .input-wrapper input {
+    color: var(--color-base-white);
+    flex: 1;
+    width: 100%;
+    padding: 1.6rem;
+  
+    background-color: var(--color-base-gray-100);
+    border: 0;
+  
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  
+  .input-wrapper input::placeholder {
+    opacity: 0.56;
+    color: var(--color-base-blue100);
+  }
+  
+  .avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+  
+    object-fit: cover;
+  
+    border-radius: 50%;
+  }
+  
+  /* Blog */
+  
+  main {
+    margin: 0 auto;
+  }
+  /* main */
+  
+  main img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .textarea-wrapper, .sidebar-wrapper {
+    padding: 3.2rem 2.2rem 0;
+  }
+  
+  h1, h2 {
+    margin-bottom: .8rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.8rem;
+  }
+  
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.2rem;
+    gap: 1.2rem;
+  }
+  
+  .icon-wrapper button {
+    border: 0;
+    padding: 1.2rem;
+    border-radius: 50%;
+    color: var(--color-base-white);
+    background-color: var(--color-base-blue800);
+  }
+  
+  .textarea-wrapper p {
+    color: var(--color-base-gray900);
+    line-height: 2.4rem;
+    margin-bottom: 3.2rem;
+  }
+  
+  /* Sidebar */
+  
+  .sidebar-wrapper h2 {
+    margin-bottom: 2.4rem;
+  }
+  
+  .card-wrapper {
+    display: flex;
+    gap: 1.6rem;
+    margin-bottom: 1.6rem;
+    align-items: center;
+    /* max-width: 38.4rem; */
+  }
+  
+  .card-wrapper img {
+    width: 15.1rem;
+    height: 8.4rem;
+    border-radius: 4px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  
+  }
+  
+  .description-wrapper {
+    gap: 1.6rem;
+    align-items: center;
+  }
+  
+  .description-wrapper h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+  }
+  
+  
+  
+  .description-wrapper p {
+    font-size: 1.4rem;
+  }
+  
+  /* Footer e animation */
+  footer {
+    background-color: var(--color-base-blue800);
+    width: 100%;
+  }
+  
+  footer p {
+    color: var(--color-base-white);
+    text-align: center;
+    padding: 1.6rem;
+    font-weight: 600;
+  }
+  
+  header {
+    --startY: -100%;
+    animation: move .2s
+  }
+  
+  footer {
+    --startY: 100%;
+    animation: move .2s;
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(var(--startY));
+    }
+  }
+  
+  .card-wrapper {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  @media (min-width:1020px) {
+    main {
+      max-width: 116.7rem; 
+      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 38.4rem;
+      margin-top: 2.4rem;
+    }
+  
+    .textarea-wrapper {
+      padding: 0;
+      margin-top: 3.2rem;
+    }
+  }
